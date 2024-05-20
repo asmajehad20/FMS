@@ -1,0 +1,24 @@
+<div class="card">
+    
+    <h5 class="card-title">Vehicle ID: {{ data.VehicleID }}</h5>
+    
+    <p class="card-text">Vehicle Number: {{ data.VehicleNumber }}</p>
+    
+    <p class="card-text">Vehicle Type: {{ data.VehicleType }}</p>
+    
+    <p class="card-text">Last Direction: {{ data.LastDirection }}</p>
+    
+    <p class="card-text">Last Status: {{ data.LastStatus }}</p>
+    
+    <p class="card-text">Last Address: {{ data.LastAddress }}</p>
+    
+    <p class="card-text">Last Latitude: {{ data.LastPosition.split(',')[0] }}</p>
+    
+    <p class="card-text">Last Longitude: {{ data.LastPosition.split(',')[1] }}</p>
+    
+    <div class="btn-group" aria-label="Vehicle Actions">
+      <button type="button" class="btn btn-success" (click)="showMoreInfo(data.VehicleID)">Show More</button>
+      <button type="button" class="btn btn-warning" (click)="openEditVehicleModal(data.VehicleID)">Edit</button>
+      <button type="button" class="btn btn-danger" (click)="deleteVehicle(data.VehicleID)">Delete</button>
+    </div>
+</div>

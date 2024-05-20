@@ -1,0 +1,28 @@
+
+<div class="modal-content">
+  <h2>Add Vehicle Information</h2>
+
+  <form class="vehicle-info-form" #form="ngForm" (ngSubmit)="submit(form.value)">
+    <div>
+      <label for="DriverID">Driver ID:</label>
+      <input type="number" id="DriverID" name="DriverID" [(ngModel)]="DriverID" required>
+    </div>
+    <div>
+      <label for="VehicleMake">Vehicle Make:</label>
+      <input type="text" id="VehicleMake" name="VehicleMake" [(ngModel)]="VehicleMake" required>
+    </div>
+    <div>
+      <label for="VehicleModel">Vehicle Model:</label>
+      <input type="text" id="VehicleModel" name="VehicleModel" [(ngModel)]="VehicleModel" required>
+    </div>
+    <div>
+      <label for="PurchaseDate">Purchase Date:</label>
+      <input type="date" id="PurchaseDate" name="PurchaseDate" [(ngModel)]="PurchaseDate" required>
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit" class="submit-button">Submit</button>
+      <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

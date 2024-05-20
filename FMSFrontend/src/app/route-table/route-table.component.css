@@ -1,0 +1,26 @@
+.mat-elevation-z8 {
+  width: 100%; 
+  max-width: 1200px; 
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.mat-cell {
+  white-space: normal; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  justify-content:center;
+  text-align: center;
+}
+
+.mat-header-row {
+  color: white;
+  background-color: #7600bc;
+  justify-content: space-between;
+ 
+}
+
+.mat-header-cell {
+  justify-content: center;
+  text-align: center;
+}

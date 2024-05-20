@@ -1,0 +1,60 @@
+.drawer-container {
+}
+
+.drawer {
+  position: fixed; 
+  bottom: 0;
+  left: -500px; 
+  width: 500px; 
+  background-color: #222; 
+  transition: left 0.3s ease; 
+  padding: 20px;
+}
+
+.drawer-container.sidebar-open .drawer {
+  left: 0; 
+}
+
+.sidebar-form {
+  padding: 20px;
+  color: white;
+  background-color: #333;
+  width: calc(100% - 40px); 
+}
+
+  .sidebar-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-form input {
+    width: calc(100% - 20px); 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+  .form-buttons button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+.submit-button {
+  background-color: #673ab7;
+}
+
+.cancel-button {
+  background-color: #111;
+}

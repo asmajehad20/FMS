@@ -1,0 +1,34 @@
+.mat-elevation-z8 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.mat-header-row {
+    color: white;
+  background-color: #7600bc; 
+}
+
+.button-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.show-more-btn {
+  background-color: #46BC00;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  margin: 10px auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+  .show-more-btn:hover {
+    background-color: #45a049;
+  }

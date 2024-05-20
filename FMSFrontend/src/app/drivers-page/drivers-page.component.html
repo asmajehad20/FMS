@@ -1,0 +1,18 @@
+<div class="page-container ">
+  <div class="add-driver-container">
+    <button class="btn add-driver-btn" (click)="toggleSidebar()">
+      <i class="fas fa-plus"></i> Add Driver
+    </button>
+  </div>
+
+
+  <div class="drivers-container">
+    <div class="driver-card" *ngFor="let driver of drivers">
+      <app-driver-card [data]="driver"></app-driver-card>
+    </div>
+
+    <app-add-driver-sidebar ngSkipHydration [showSidebar]="showSidebar"></app-add-driver-sidebar>
+  </div>
+
+</div>
+

@@ -1,0 +1,5 @@
+.table-container {
+  grid-row: 2;
+  grid-column: 2;
+  overflow-y: auto;
+}

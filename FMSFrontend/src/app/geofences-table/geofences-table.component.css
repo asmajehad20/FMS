@@ -1,0 +1,44 @@
+.mat-elevation-z8 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.mat-header-row {
+  color: white;
+  background-color: #7600bc; 
+}
+
+.mat-cell {
+  white-space: normal; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  justify-content: center;
+  text-align: center;
+}
+
+.mat-header-row {
+  color: white;
+  background-color: #7600bc; 
+  justify-content: space-between;
+}
+
+.mat-header-cell {
+  justify-content: center;
+  text-align: center;
+}
+
+.btn add-route-btn {
+  margin: 50px 10px 20px;
+  background-color: #7600bc;
+  border: none;
+  color: white;
+  padding: 10px 20px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px; 
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}

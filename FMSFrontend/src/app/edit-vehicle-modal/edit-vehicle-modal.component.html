@@ -1,0 +1,33 @@
+
+<div class="modal-content">
+  <h2>Edit Vehicle Information</h2>
+
+  <form #form="ngForm" (ngSubmit)="onSave(form.value)">
+    <div>
+      <label for="VehicleNumber">Vehicle Number:</label>
+      <input type="text" id="VehicleNumber" name="VehicleNumber" [(ngModel)]="VehicleNumber" required>
+    </div>
+    <div>
+      <label for="VehicleType">Vehicle Type:</label>
+      <input type="text" id="VehicleType" name="VehicleType" [(ngModel)]="VehicleType" required>
+    </div>
+    <div>
+      <label for="VehicleMake">Vehicle Make:</label>
+      <input type="text" id="VehicleMake" name="VehicleMake" [(ngModel)]="VehicleMake" required>
+    </div>
+    <div>
+      <label for="VehicleModel">Vehicle Model:</label>
+      <input type="text" id="VehicleModel" name="VehicleModel" [(ngModel)]="VehicleModel" required>
+    </div>
+
+    <div>
+      <label for="PurchaseDate">Purchase Date:</label>
+      <input  type="date" id="PurchaseDate" name="PurchaseDate" [(ngModel)]="PurchaseDate" required>
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,60 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #222;
+  color: #fff;
+}
+
+
+.navbar-logo {
+  font-size: 24px;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.navbar-brand {
+  flex: 0 0 auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ddd;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+
+.navbar-nav {
+  flex: 1 1 auto;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+.fa-bars.icon {
+  cursor: pointer;
+  color: #7600bc;
+  font-size: 28px;
+  padding: 10px 10px;
+}

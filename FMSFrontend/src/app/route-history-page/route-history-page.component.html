@@ -1,0 +1,30 @@
+<div class="page-container">
+  <div class="selectors">
+    <div class="date-selectors">
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" [value]="startDate | date:'yyyy-MM-dd'" (change)="onStartDateChange($event)">
+    </div>
+    <div class="date-selectors">
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" [value]="endDate | date:'yyyy-MM-dd'" (change)="onEndDateChange($event)">
+    </div>
+    <div class="vehicle-selector">
+      <label for="selectedVehicleId">Select Vehicle:</label>
+      <select id="selectedVehicleId" name="selectedVehicleId" [(ngModel)]="selectedVehicleId" (change)="onVehicleSelected()">
+        <option *ngFor="let vehicle of vehicles" [value]="vehicle.VehicleID">{{ vehicle.VehicleNumber }}</option>
+      </select>
+    </div>
+
+
+    <button class="btn add-route-button" (click)="toggleSidebar()">
+      <i class="fas fa-plus"></i> Add Route
+    </button>
+
+  </div>
+
+  <div class="table-container">
+    <app-route-table [startDate]="startDate" [endDate]="endDate" [selectedVehicleId]="selectedVehicleId"></app-route-table>
+  </div>
+
+  <app-add-route-sidebar ngSkipHydration [showSidebar]="showSidebar"></app-add-route-sidebar>
+</div>

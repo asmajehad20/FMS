@@ -1,0 +1,48 @@
+<mat-drawer-container class="drawer-container" [class.sidebar-open]="showSidebar">
+  <mat-drawer #drawer mode="side" [opened]="showSidebar" class="drawer">
+    
+    <form class="sidebar-form" *ngIf="showSidebar">
+
+      <label for="VehicleID">Vehicle ID:</label>
+      <select id="VehicleID" name="VehicleID" [(ngModel)]="VehicleID" required>
+        <option *ngFor="let vehicle of vehicles" [value]="vehicle.VehicleID">{{ vehicle.VehicleNumber }}</option>
+      </select>
+
+      <label for="VehicleDirection">Vehicle Direction:</label>
+      <input type="text" id="VehicleDirection" name="VehicleDirection" [(ngModel)]="VehicleDirection" required>
+
+
+      <label>Status:</label>
+      <select id="Status" name="Status" [(ngModel)]="Status" required>
+        <option value="0">Stopped</option>
+        <option value="1">Moving</option>
+      </select>
+
+
+      <label for="VehicleSpeed">Vehicle Speed:</label>
+      <input type="text" id="VehicleSpeed" name="VehicleSpeed" [(ngModel)]="VehicleSpeed" required>
+
+
+      <label for="Epoch">Epoch:</label>
+      <input type="date" id="Epoch" name="Epoch" [(ngModel)]="Epoch" required>
+
+
+      <label for="Address">Address:</label>
+      <input type="text" id="Address" name="Address" [(ngModel)]="Address" required>
+
+
+      <label for="Latitude">Latitude:</label>
+      <input type="text" id="Latitude" name="Latitude" [(ngModel)]="Latitude" required>
+
+      <label for="Longitude">Longitude:</label>
+      <input type="text" id="Longitude" name="Longitude" [(ngModel)]="Longitude" required>
+
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-button" (click)="submit()">Submit</button>
+        <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+      </div>
+
+    </form>
+  </mat-drawer>
+</mat-drawer-container>

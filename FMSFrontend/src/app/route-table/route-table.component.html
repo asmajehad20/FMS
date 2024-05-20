@@ -1,0 +1,51 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="VehicleID">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Vehicle ID </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.VehicleID }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="VehicleNumber">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Vehicle Number </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.VehicleNumber }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Address">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Address </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.Address }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.Status }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Latitude">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Latitude </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.Latitude }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Longitude">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Longitude </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.Longitude }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="VehicleDirection">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> Vehicle Direction </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.VehicleDirection }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="GPSSpeed">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> GPSSpeed </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.GPSSpeed }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="GPSTime">
+    <mat-header-cell class="mat-header-cell" *matHeaderCellDef> GPSTime </mat-header-cell>
+    <mat-cell class="mat-cell" *matCellDef="let route"> {{ route.GPSTime }} </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

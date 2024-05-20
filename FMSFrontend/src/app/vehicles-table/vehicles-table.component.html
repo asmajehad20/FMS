@@ -1,0 +1,52 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+  <ng-container matColumnDef="VehicleID">
+    <mat-header-cell *matHeaderCellDef> Vehicle ID </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.VehicleID }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="VehicleNumber">
+    <mat-header-cell *matHeaderCellDef> Vehicle Number </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.VehicleNumber }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="VehicleType">
+    <mat-header-cell *matHeaderCellDef> Vehicle Type </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.VehicleType }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LastDirection">
+    <mat-header-cell *matHeaderCellDef> Last Direction </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.LastDirection }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LastStatus">
+    <mat-header-cell *matHeaderCellDef> Last Status </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.LastStatus }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LastAddress">
+    <mat-header-cell *matHeaderCellDef> Last Address </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.LastAddress }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LastLatitude">
+    <mat-header-cell *matHeaderCellDef> Last Latitude </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.LastPosition.split(',')[0] }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="LastLongitude">
+    <mat-header-cell *matHeaderCellDef> Last Longitude </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle"> {{ vehicle.LastPosition.split(',')[1] }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Show more information </mat-header-cell>
+    <mat-cell *matCellDef="let vehicle" class="button-cell">
+      <button mat-button class="show-more-btn" (click)="showMoreInfo(vehicle)">Show more</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

@@ -1,0 +1,18 @@
+<mat-drawer-container class="drawer-container" [class.sidebar-open]="showSidebar">
+  <mat-drawer #drawer mode="side" [opened]="showSidebar" class="drawer">
+    
+    <form class="sidebar-form" *ngIf="showSidebar">
+      <label for="VehicleNumber">Vehicle Number:</label>
+      <input type="text" id="VehicleNumber" name="VehicleNumber" [(ngModel)]="VehicleNumber" required>
+
+      <label for="vehicleType">Vehicle Type:</label>
+      <input type="text" id="VehicleType" name="VehicleType" [(ngModel)]="VehicleType" required>
+
+      <div class="form-buttons">
+        <button type="submit" class="submit-button" (click)="submit()">Submit</button>
+        <button type="button" class="cancel-button" (click)="cancel()">Cancel</button>
+      </div>
+
+    </form>
+  </mat-drawer>
+</mat-drawer-container>

@@ -1,0 +1,11 @@
+<div class="card">
+
+  <h5 class="card-title">Driver ID: {{ data.DriverID }}</h5>
+  <p class="card-text">Driver Name: {{ data.DriverName }}</p>
+  <p class="card-text">PhoneNumber: {{ data.PhoneNumber }}</p>
+  
+  <div class="btn-group" aria-label="Driver Actions">
+    <button type="button" class="btn btn-warning" (click)="openEditDriverModal(data)">Edit</button>
+    <button type="button" class="btn btn-danger" (click)="deleteDriver(data.DriverID)">Delete</button>
+  </div>
+</div>

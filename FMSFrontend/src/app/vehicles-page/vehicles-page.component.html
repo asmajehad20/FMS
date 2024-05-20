@@ -1,0 +1,14 @@
+<div class="page-container">
+  <div class="add-vehicle-container">
+    <button class="btn add-vehicle-btn" (click)="toggleSidebar()">
+      <i class="fas fa-plus"></i> Add Vehicle
+    </button>
+  </div>
+    <div class="vehicles-container">
+      <div class="vehicle-card" *ngFor="let vehicle of vehicles">
+        <app-vehicle-card [data]="vehicle"></app-vehicle-card>
+      </div>
+
+      <app-add-vehicle-sidebar ngSkipHydration [showSidebar]="showSidebar"></app-add-vehicle-sidebar>
+    </div>
+  </div>

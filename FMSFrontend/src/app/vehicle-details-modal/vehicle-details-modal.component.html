@@ -1,0 +1,25 @@
+<div class="modal-content">
+  <h2>Vehicle Details</h2>
+  <ul>
+    <li>Vehicle Number: {{ data.VehicleInformation[0].VehicleNumber }}</li>
+    <li>Vehicle Type: {{ data.VehicleInformation[0].VehicleType }}</li>
+
+    <li>
+      <div class="driver-selector">
+        <label for="selectedDriverName">Select Driver:</label>
+        <select id="selectedDriverName" name="selectedDriverName" [(ngModel)]="selectedDriverName" (change)="onDriverSelected()">
+          <option *ngFor="let driver of drivers" [value]="driver.DriverName">{{ driver.DriverName }}</option>
+        </select>
+      </div>
+    </li>
+
+    <li>Phone Number: {{ data.VehicleInformation[0].PhoneNumber }}</li>
+    <li>Last Position: {{ data.VehicleInformation[0].LastPosition }}</li>
+    <li>Make: {{ data.VehicleInformation[0].VehicleMake }}</li>
+    <li>Model: {{ data.VehicleInformation[0].VehicleModel }}</li>
+    <li>Last GPS Time: {{ data.VehicleInformation[0].LastGPSTime }}</li>
+    <li>Last GPS Speed: {{ data.VehicleInformation[0].LastGPSSpeed }}</li>
+    <li>Last Address: {{ data.VehicleInformation[0].LastAddress }}</li>
+  </ul>
+
+</div>
