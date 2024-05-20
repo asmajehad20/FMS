@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "k/qcXXRjaQOAuQYjsXNBHQwLswz7NeNxJC/VZ+gM8kA=",
+  "Source": "FleetMSApi",
+  "BasePath": "_content/FleetMSApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
