@@ -1,0 +1,3 @@
+1,Circle,1640995200000,blue,0.7,2.5,green,0.5
+2,Rectangle,1630454400000,red,0.8,3,yellow,0.6
+3,Polygon,1625097600000,orange,0.6,2,purple,0.4
