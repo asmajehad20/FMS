@@ -1,0 +1,14 @@
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\bin\Debug\net8.0\FleetMSLogic.deps.json
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\bin\Debug\net8.0\FleetMSLogic.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\bin\Debug\net8.0\FleetMSLogic.pdb
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.AssemblyInfo.cs
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\refint\FleetMSLogic.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.pdb
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\ref\FleetMSLogic.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\bin\Debug\net8.0\FPro.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSLogic\FleetMSLogic\obj\Debug\net8.0\FleetMSLogic.csproj.CopyComplete
