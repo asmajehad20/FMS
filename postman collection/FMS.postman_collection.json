@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "209ddbda-57c4-47bb-9b1b-4aa29d6c1b03",
+		"name": "FMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26188635",
+		"_collection_link": "https://interstellar-crescent-34563.postman.co/workspace/New-Team-Workspace~a23507a1-3da2-46f4-817f-a129592897f2/collection/26188635-209ddbda-57c4-47bb-9b1b-4aa29d6c1b03?action=share&source=collection_link&creator=26188635"
+	},
+	"item": [
+		{
+			"name": "AddVehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleNumber\" : \"1\",\r\n            \"VehicleType\" : \"Taxi\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDriver",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"DriverName\" : \"asma gvar \",\r\n            \"PhoneNumber\" : \"1200546987\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Driver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddVehicleInformations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleID\" : \"7\",\r\n            \"DriverID\" : \"0\",\r\n            \"VehicleMake\" : \"italy\",\r\n            \"VehicleModel\" : \"Toyota\",\r\n            \"PurchaseDate\" : \"1715806800\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/VehiclesInformations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"VehiclesInformations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RouteHistory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleID\": \"8\",\r\n            \"VehicleDirection\": \"0\",\r\n            \"Status\": \"1\",\r\n            \"VehicleSpeed\": \"50\",\r\n            \"Epoch\": \"1716163199000\",\r\n            \"Address\": \"soul\",\r\n            \"Latitude\": \"20.86757844564\",\r\n            \"Longitude\":\"40.49867576873\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7157/api/RouteHistory",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"RouteHistory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateVehicle",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleNumber\" : \"666\",\r\n            \"VehicleType\" : \"\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Vehicles/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Vehicles",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDriver",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"DriverID\" : \"2\",\r\n            \"DriverName\" : \"Jane Smithh\",\r\n            \"PhoneNumber\" : \"9876543210\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Driver/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Driver",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateVehicleInformations",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleID\" : \"9\",\r\n            \"DriverID\" : \"1\",\r\n            \"VehicleMake\" : \"\",\r\n            \"VehicleModel\" : \"\",\r\n            \"PurchaseDate\" : \"1115164800\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/VehiclesInformations/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"VehiclesInformations",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteVehicle",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleNumber\" : \"666\",\r\n            \"VehicleType\" : \"\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Vehicles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Vehicles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDriver",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"DicOfDic\": {\r\n        \"Tags\":{\r\n            \"VehicleNumber\" : \"666\",\r\n            \"VehicleType\" : \"\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5205/api/Driver/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Driver",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5205/api/Vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDrivers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5205/api/Driver",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"Driver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetVehicleInformation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5205/api/VehiclesInformations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5205",
+					"path": [
+						"api",
+						"VehiclesInformations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRouteHistory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7157/api/RouteHistory/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"RouteHistory",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGeofences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7157/api/Geofences",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"Geofences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCircularGeofences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7157/api/CircularGeofence",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"CircularGeofence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRectangularGeofences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7157/api/RectangularGeofence",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"RectangularGeofence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPolygonGeofence",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7157/api/PolygonGeofence",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7157",
+					"path": [
+						"api",
+						"PolygonGeofence"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
