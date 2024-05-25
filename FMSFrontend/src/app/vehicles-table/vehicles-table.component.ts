@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, OnDestroy } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { GVAR } from '../../GVAR';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { VehicleDetailsModalComponent } from '../vehicle-details-modal/vehicle-details-modal.component';
 import { MatTableModule } from '@angular/material/table';
-import { HubConnection } from '@microsoft/signalr';
 
 interface Vehicle {
   VehicleID: string;
@@ -26,19 +25,30 @@ interface Vehicle {
 })
 
 
-export class VehiclesTableComponent implements OnInit {
+export class VehiclesTableComponent implements OnInit, OnDestroy {
   
   //data
+  messages: string[] = [];
+  private socket: WebSocket | null = null;
+  
+
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['VehicleID', 'VehicleNumber', 'VehicleType', 'LastDirection', 'LastStatus', 'LastAddress', 'LastLatitude', 'LastLongitude', 'actions'];
 
   //constructor
-  constructor(private http: HttpClient, private dialog: MatDialog) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient, private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<any>();
+    
   }
+
+  
 
   //functions
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.establishWebSocketConnection();
+    }
+
 
     this.http.get<GVAR>('http://localhost:5205/api/Vehicles').subscribe({
       next: (data: any) => {
@@ -52,6 +62,43 @@ export class VehiclesTableComponent implements OnInit {
       }
     });
      
+  }
+  ngOnDestroy(): void {
+    this.socket?.close();
+  }
+  
+  private establishWebSocketConnection() {
+    this.socket = new WebSocket('ws://localhost:5205/ws');
+
+    this.socket.onopen = (event) => {
+      console.log("WebSocket is open now.");
+
+      if(this.socket != null)
+      if (this.socket.readyState === WebSocket.OPEN) {
+        this.socket.send("{}");
+      }
+
+    };
+
+    this.socket.onmessage = (event) => {
+      //console.log("Received updated data from server: ", event.data);
+
+      const eventData = JSON.parse(event.data);
+
+      if (eventData && eventData.DicOfDT && eventData.DicOfDT.Vehicles) {
+        //console.log(eventData.DicOfDT);
+        this.dataSource.data = eventData.DicOfDT.Vehicles;
+      }
+    };
+
+    this.socket.onclose = (event) => {
+      //console.log("WebSocket connection is closed....");
+      
+    };
+
+    this.socket.onerror = (error) => {
+      //console.log("WebSocket error: ", error);
+    };
   }
 
   showMoreInfo(vehicle: Vehicle) {
@@ -76,4 +123,6 @@ export class VehiclesTableComponent implements OnInit {
       }
     });
   }
+
+ 
 }
