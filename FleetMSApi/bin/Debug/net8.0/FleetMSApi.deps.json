@@ -8,13 +8,23 @@
     ".NETCoreApp,Version=v8.0": {
       "FleetMSApi/1.0.0": {
         "dependencies": {
+          "Fleck": "1.2.0",
           "FleetMSLogic": "1.0.0",
+          "Microsoft.AspNetCore.WebSockets": "2.2.1",
           "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.5.0",
           "FPro": "1.0.0.0"
         },
         "runtime": {
           "FleetMSApi.dll": {}
+        }
+      },
+      "Fleck/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp2.0/Fleck.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
@@ -356,6 +366,7 @@
       },
       "FleetMSLogic/1.0.0": {
         "dependencies": {
+          "Fleck": "1.2.0",
           "Microsoft.AspNetCore.SignalR": "1.1.0",
           "Microsoft.AspNetCore.WebSockets": "2.2.1",
           "Newtonsoft.Json": "13.0.3",
@@ -380,6 +391,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Fleck/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bPLXn6QbLAFoviur6XbrKB0Zn6x04E8VibHXyHZeJsoC7bkUl5DVtzM5cZgDuqHkIrBqAXJyTNJwSNIc6wBJ2Q==",
+      "path": "fleck/1.2.0",
+      "hashPath": "fleck.1.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Abstractions/2.2.0": {
       "type": "package",

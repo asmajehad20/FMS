@@ -36,3 +36,4 @@ C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSApi\obj\Debug\net8.0\FleetMSApi.genrunt
 C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSApi\obj\Debug\net8.0\ref\FleetMSApi.dll
 C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSApi\obj\Debug\net8.0\FleetMSApi.csproj.CopyComplete
 C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSApi\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Users\pc\Desktop\QTZ\tasks\FMS\FleetMSApi\bin\Debug\net8.0\Fleck.dll

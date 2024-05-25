@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iLAfqT191slDtZSaagmyFDzw/lqLyX7GYoJy0gncL9vr2vmjWPVM9CuUrcBn2JJUSYRHpSpVsHRTRx/k4oZmaQ==",
+  "dgSpecHash": "9IdW9j6hLn49Ks3ROZHywv56+6cPDGhWjLP8IvdVWER57UzoszJ63mBIqo9CJmZyVZynrj7zsIgoEtxT41yWJQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\Desktop\\QTZ\\tasks\\FMS\\FleetMSLogic\\FleetMSLogic\\FleetMSLogic.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\fleck\\1.2.0\\fleck.1.2.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",

@@ -7,6 +7,11 @@ using System.Data;
 using System.Reflection;
 using Microsoft.AspNetCore.SignalR;
 using System.Collections.Concurrent;
+using System.Net.WebSockets;
+using System.Text;
+using FleetMSApi;
+using System;
+using Fleck;
 
 namespace FleetMSApi.Controllers
 {
@@ -15,11 +20,7 @@ namespace FleetMSApi.Controllers
     [ApiController]
     public class RouteHistoryController : ControllerBase
     {
-        private readonly IHubContext<UpdateHub> _hubContext;
-        public RouteHistoryController(IHubContext<UpdateHub> hubContext)
-        {
-            _hubContext = hubContext;
-        }
+
 
         [HttpGet("{VehicleID}")]
         public IActionResult GetRouteHistoryController(string VehicleID, [FromHeader]string StartTime, [FromHeader]string EndTime)
@@ -63,8 +64,20 @@ namespace FleetMSApi.Controllers
                 VehicleManager manager = new();
                 manager.AddRouteHistory(Gvar);
 
-                await _hubContext.Clients.All.SendAsync("ReceiveMessage", JsonConvert.SerializeObject(manager.GetAllVehicles()));
                 Gvar.DicOfDic["Tags"]["STS"] = "1";
+
+                string jsonData = JsonConvert.SerializeObject(manager.GetAllVehicles());
+                using (ClientWebSocket webSocket = new ClientWebSocket())
+                {
+                    await webSocket.ConnectAsync(new Uri("ws://localhost:5205/ws"), CancellationToken.None);
+
+                    ArraySegment<byte> buffer = new ArraySegment<byte>(Encoding.UTF8.GetBytes(jsonData));
+                    await webSocket.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None);
+                    await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closed by server", CancellationToken.None);
+
+                }
+
+
                 return Ok(JsonConvert.SerializeObject(Gvar));
             }
             catch (Exception ex)
