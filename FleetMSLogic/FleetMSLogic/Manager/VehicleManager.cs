@@ -420,6 +420,7 @@ namespace FleetMSLogic.Manager
 
         public void UpdateVehicleInformations(string VehicleID, GVAR Gvar)
         {
+            
             if (Gvar == null || string.IsNullOrEmpty(VehicleID))
             {
                 throw new ArgumentNullException($"{nameof(Gvar)} and {nameof(VehicleID)} cannot be null.");
@@ -441,7 +442,11 @@ namespace FleetMSLogic.Manager
                 throw new Exception($"Vehicle does not Exist");
             }
 
-            Vehicle? stroedVehicleInfo = _vehicleRepository.GetVehicleInformations(VehicleID) ?? addEmptyInformation(VehicleID, Gvar.DicOfDic["Tags"][VehicleTags.DriverID.ToString()]) ;
+            if (_vehicleRepository.GetVehicleInformations(VehicleID) == null)
+            {
+                addEmptyInformation(VehicleID, "0");
+            }
+            Vehicle stroedVehicleInfo = _vehicleRepository.GetVehicleInformations(VehicleID) ?? addEmptyInformation(VehicleID, Gvar.DicOfDic["Tags"][VehicleTags.DriverID.ToString()]);
 
             if (stroedVehicleInfo == null) { throw new Exception(""); }
 
@@ -484,6 +489,10 @@ namespace FleetMSLogic.Manager
 
         private Vehicle addEmptyInformation(string VehicleID, string Driverid)
         {
+            if (string.IsNullOrEmpty(Driverid))
+            {
+                Driverid = "0";
+            }
             Vehicle vehicle = new()
             {
                 VehicleID = long.Parse(VehicleID),
@@ -498,7 +507,6 @@ namespace FleetMSLogic.Manager
             {
                 throw new Exception($"failed to add Vehicle information");
             }
-
             return vehicle;
 
         }

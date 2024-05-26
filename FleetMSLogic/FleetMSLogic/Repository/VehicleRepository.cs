@@ -132,7 +132,7 @@ namespace FleetMSLogic.Repository
 
                 ////////////////////////////////////
 
-                Console.WriteLine($"updated successfully");
+                Console.WriteLine($"updated successfully?");
                 return true;
             }
             catch (Exception ex)
@@ -194,23 +194,47 @@ namespace FleetMSLogic.Repository
             try
             {
                 dbConnection.OpenConnection();
-
+                string Sql;
+                int rowsAffected;
                 ////////////////////////////////////
-                string Sql = "UPDATE VehiclesInformations SET VehicleMake = @VehicleMake, DriverID = @DriverID, " +
+                if (vehicle.DriverID == 0)
+                {
+                    Sql = "UPDATE VehiclesInformations SET VehicleMake = @VehicleMake, " +
                                               "VehicleModel = @VehicleModel, PurchaseDate = @PurchaseDate " +
                                               "WHERE VehicleID = @VehicleID";
 
-                using NpgsqlCommand Command = new(Sql, dbConnection.Connection);
-                Command.Parameters.AddWithValue("@VehicleMake", vehicle.VehicleMake);
-                Command.Parameters.AddWithValue("@VehicleModel", vehicle.VehicleModel);
-                Command.Parameters.AddWithValue("@PurchaseDate", vehicle.PurchaseDate);
-                Command.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
-                Command.Parameters.AddWithValue("@DriverID", vehicle.DriverID);
-                Command.ExecuteNonQuery();
+                    using NpgsqlCommand Command = new(Sql, dbConnection.Connection);
+                    Command.Parameters.AddWithValue("@VehicleMake", vehicle.VehicleMake);
+                    Command.Parameters.AddWithValue("@VehicleModel", vehicle.VehicleModel);
+                    Command.Parameters.AddWithValue("@PurchaseDate", vehicle.PurchaseDate);
+                    Command.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
+                    Command.ExecuteNonQuery();
+                    rowsAffected = Command.ExecuteNonQuery();
+                }
+                else
+                {
+                    Sql = "UPDATE VehiclesInformations SET VehicleMake = @VehicleMake, DriverID = @DriverID, " +
+                                              "VehicleModel = @VehicleModel, PurchaseDate = @PurchaseDate " +
+                                              "WHERE VehicleID = @VehicleID";
+
+                    using NpgsqlCommand Command = new(Sql, dbConnection.Connection);
+                    Command.Parameters.AddWithValue("@VehicleMake", vehicle.VehicleMake);
+                    Command.Parameters.AddWithValue("@VehicleModel", vehicle.VehicleModel);
+                    Command.Parameters.AddWithValue("@PurchaseDate", vehicle.PurchaseDate);
+                    Command.Parameters.AddWithValue("@VehicleID", vehicle.VehicleID);
+                    Command.Parameters.AddWithValue("@DriverID", vehicle.DriverID);
+                    Command.ExecuteNonQuery();
+                    rowsAffected = Command.ExecuteNonQuery();
+                }
+
+
+
 
                 ////////////////////////////////////
-                Console.WriteLine($"updated successfully");
-                return true;
+                
+
+                Console.WriteLine("Updated successfully.");
+                return rowsAffected > 0;
             }
             catch (Exception ex)
             {
@@ -393,7 +417,7 @@ namespace FleetMSLogic.Repository
             {
                 dbConnection.OpenConnection();
 
-                string sql = "SELECT VehicleID, DriverID, VehicleMake, VehicleModel, PurchaseDate   FROM VehiclesInformations WHERE VehicleID = @VehicleID";
+                string sql = "SELECT VehicleID, DriverID, VehicleMake, VehicleModel, PurchaseDate  FROM VehiclesInformations WHERE VehicleID = @VehicleID";
 
                 using NpgsqlCommand command = new(sql, dbConnection.Connection);
                 command.Parameters.AddWithValue("@VehicleID", long.Parse(vehicleID));
@@ -405,19 +429,17 @@ namespace FleetMSLogic.Repository
                     Vehicle vehicle = new()
                     {
                         VehicleID = reader.GetInt32(0),
-                        //VehicleNumber = reader.GetInt32(reader.GetOrdinal("VehicleNumber")),
-                        //VehicleType = reader.GetString(reader.GetOrdinal("VehicleType")),
 
                         DriverID = reader.IsDBNull(1) ? 0 : reader.GetInt32(1),
                         VehicleMake = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
                         VehicleModel = reader.IsDBNull(3) ? string.Empty : reader.GetString(3),
                         PurchaseDate = reader.IsDBNull(4) ? 0 : reader.GetInt64(4),
                     };
-
                     return vehicle;
                 }
                 else
                 {
+                   
                     return null;
                 }
             }
